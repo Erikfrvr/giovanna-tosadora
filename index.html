@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- ===== Segurança =====
+       CSP: o navegador só executa scripts, estilos, fontes e imagens do próprio site.
+       Qualquer código injetado (inline, de outro domínio, eval) é bloqueado.
+       Única exceção: o mapa do Google, isolado num iframe com sandbox.
+       Ao editar o site, NÃO use <script> ou style="" no HTML: coloque em assets/js e assets/css. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; manifest-src 'self'; frame-src https://www.google.com; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="format-detection" content="telephone=no">
+
+  <title>Giovanna Pinheiro · Tosadora | Banho e Tosa em Vila Guilherme – SP</title>
+  <meta name="description" content="Banho, hidratação, corte de unha, tosa higiênica, remoção de subpelos e penteados feitos com muito carinho. Giovanna Pinheiro, tosadora em Vila Guilherme, São Paulo. Agende pelo WhatsApp (11) 98253-5656.">
+  <meta name="theme-color" content="#FDE2E4">
+  <meta name="color-scheme" content="light">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="canonical" href="https://erikfrvr.github.io/giovanna-tosadora/">
+
+  <!-- Compartilhamento (WhatsApp, Instagram, Facebook).
+       A imagem precisa de endereço completo para a prévia aparecer. -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://erikfrvr.github.io/giovanna-tosadora/">
+  <meta property="og:title" content="Giovanna Pinheiro · Tosadora">
+  <meta property="og:description" content="Banho & tosa com carinho em Vila Guilherme, São Paulo. Agende pelo WhatsApp!">
+  <meta property="og:image" content="https://erikfrvr.github.io/giovanna-tosadora/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="assets/fonts/satisfy-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="assets/img/giovanna-pet.webp" type="image/webp">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/boot.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Giovanna Pinheiro · Tosadora",
+    "description": "Banho, hidratação, corte de unha, tosa higiênica, remoção de subpelos e penteados para pets.",
+    "url": "https://erikfrvr.github.io/giovanna-tosadora/",
+    "image": "https://erikfrvr.github.io/giovanna-tosadora/assets/img/og-image.jpg",
+    "telephone": "+55-11-98253-5656",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "R. Maria Prestes Maia, 527 - Vila Guilherme",
+      "addressLocality": "São Paulo",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
+    "sameAs": ["https://www.instagram.com/gi_pinheiiro/"]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ Ícones (sprite SVG) ============ -->
+  <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="paw" viewBox="0 0 64 64">
+      <path d="M32 59c-10 0-19-4.5-19-12.5 0-7 6.5-11.5 10.5-16.5 2.6-3.2 5-5.5 8.5-5.5s5.9 2.3 8.5 5.5C44.5 35 51 39.5 51 46.5 51 54.5 42 59 32 59z"/>
+      <ellipse cx="12.5" cy="28" rx="6" ry="8" transform="rotate(-22 12.5 28)"/>
+      <ellipse cx="24.5" cy="13.5" rx="6.2" ry="8.4" transform="rotate(-8 24.5 13.5)"/>
+      <ellipse cx="39.5" cy="13.5" rx="6.2" ry="8.4" transform="rotate(8 39.5 13.5)"/>
+      <ellipse cx="51.5" cy="28" rx="6" ry="8" transform="rotate(22 51.5 28)"/>
+    </symbol>
+    <symbol id="heart" viewBox="0 0 24 24">
+      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+    </symbol>
+    <symbol id="heart-o" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 20.3s-8.5-5.1-8.5-11.2C3.5 6.3 5.6 4.3 8.1 4.3c1.8 0 3.1 1 3.9 2.4.8-1.4 2.1-2.4 3.9-2.4 2.5 0 4.6 2 4.6 4.8 0 6.1-8.5 11.2-8.5 11.2z"/>
+    </symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24">
+      <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+    </symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2.1">
+        <rect x="2.6" y="2.6" width="18.8" height="18.8" rx="5.6"/>
+        <circle cx="12" cy="12" r="4.4"/>
+      </g>
+      <circle cx="17.5" cy="6.5" r="1.35"/>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24">
+      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/>
+    </symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24">
+      <path d="M10 3c.7 4.3 2.4 6 6.7 6.7-4.3.7-6 2.4-6.7 6.7-.7-4.3-2.4-6-6.7-6.7C7.6 9 9.3 7.3 10 3z"/>
+      <path d="M18 13.5c.4 2.2 1.3 3.1 3.5 3.5-2.2.4-3.1 1.3-3.5 3.5-.4-2.2-1.3-3.1-3.5-3.5 2.2-.4 3.1-1.3 3.5-3.5z"/>
+    </symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4.5" width="18" height="16.5" rx="3.5"/>
+        <path d="M8 2.5v4M16 2.5v4M3 9.5h18"/>
+      </g>
+      <path d="M12 18.6s-3.4-2-3.4-4.3c0-1.1.8-1.9 1.8-1.9.7 0 1.3.4 1.6 1 .3-.6.9-1 1.6-1 1 0 1.8.8 1.8 1.9 0 2.3-3.4 4.3-3.4 4.3z"/>
+    </symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M20.5 11.6a8.4 8.4 0 0 1-12.3 7.4L3.5 20.5l1.6-4.5A8.4 8.4 0 1 1 20.5 11.6z"/>
+      <circle cx="8.4" cy="11.8" r="1.2"/><circle cx="12.1" cy="11.8" r="1.2"/><circle cx="15.8" cy="11.8" r="1.2"/>
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h10"/>
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/>
+    </symbol>
+
+    <!-- Serviços -->
+    <symbol id="s-banho" viewBox="0 0 48 48">
+      <g fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M28 10.5v-2h6.5V13"/>
+        <path d="M32 13h5v4h-5z"/>
+        <rect x="29" y="17" width="11" height="22" rx="3.5"/>
+        <path d="M32.2 25.5h4.6"/>
+        <path d="M6 30h22a11 9.5 0 0 1-22 0z"/>
+        <path d="M8 30c-1-2.6 1.2-4.6 3.5-3.8.6-2.6 4.1-3.4 5.7-1.3 1.6-1.6 4.6-.9 5.1 1.4 2.1-.4 3.6 1.6 2.7 3.7"/>
+      </g>
+      <g fill="#fff"><path d="M12 11Q12 15 16 15Q12 15 12 19Q12 15 8 15Q12 15 12 11Z"/><path d="M21 6.5Q21 9 23.5 9Q21 9 21 11.5Q21 9 18.5 9Q21 9 21 6.5Z"/></g>
+    </symbol>
+    <symbol id="s-hidratacao" viewBox="0 0 48 48">
+      <g fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M24 6.5C19 13.5 12.5 20 12.5 28a11.5 11.5 0 0 0 23 0c0-8-6.5-14.5-11.5-21.5z"/>
+        <path d="M18.5 28.5a6 6 0 0 0 4.5 5.5"/>
+      </g>
+      <g fill="#fff"><path d="M37 7Q37 11 41 11Q37 11 37 15Q37 11 33 11Q37 11 37 7Z"/><path d="M39.5 18Q39.5 20.5 42 20.5Q39.5 20.5 39.5 23Q39.5 20.5 37 20.5Q39.5 20.5 39.5 18Z"/><path d="M9 12Q9 14.5 11.5 14.5Q9 14.5 9 17Q9 14.5 6.5 14.5Q9 14.5 9 12Z"/></g>
+    </symbol>
+    <symbol id="s-unha" viewBox="0 0 48 48">
+      <g fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="14.6" cy="14.6" r="4.8"/>
+        <circle cx="14.6" cy="33.8" r="4.8"/>
+        <path d="M38 10.4L18 30.4M28.2 28.2L38 38M18 18l6.2 6.2"/>
+      </g>
+      <g fill="#fff"><path d="M32 4Q32 8 36 8Q32 8 32 12Q32 8 28 8Q32 8 32 4Z"/><path d="M41 21Q41 23.5 43.5 23.5Q41 23.5 41 26Q41 23.5 38.5 23.5Q41 23.5 41 21Z"/></g>
+    </symbol>
+    <symbol id="s-tosa" viewBox="0 0 48 48">
+      <g fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" transform="rotate(35 24 25)">
+        <rect x="17" y="16" width="14" height="25" rx="6"/>
+        <path d="M16 10h16v6H16z"/>
+        <path d="M18.5 10V7M22 10V7M26 10V7M29.5 10V7"/>
+        <path d="M24 24v5"/>
+      </g>
+      <g fill="#fff"><path d="M10 7Q10 11 14 11Q10 11 10 15Q10 11 6 11Q10 11 10 7Z"/><path d="M41 31Q41 33.5 43.5 33.5Q41 33.5 41 36Q41 33.5 38.5 33.5Q41 33.5 41 31Z"/></g>
+    </symbol>
+    <symbol id="s-subpelo" viewBox="0 0 48 48">
+      <g fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" transform="rotate(-32 24 24)">
+        <rect x="13" y="5" width="22" height="16" rx="3.5"/>
+        <path d="M18 9.5v7M22 9.5v7M26 9.5v7M30 9.5v7"/>
+        <path d="M21 21h6v18a3 3 0 0 1-6 0z"/>
+      </g>
+      <g fill="#fff"><path d="M38 9Q38 13 42 13Q38 13 38 17Q38 13 34 13Q38 13 38 9Z"/><path d="M9 32Q9 34.5 11.5 34.5Q9 34.5 9 37Q9 34.5 6.5 34.5Q9 34.5 9 32Z"/></g>
+    </symbol>
+    <symbol id="s-pente" viewBox="0 0 48 48">
+      <g fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" transform="rotate(-40 24 24)">
+        <rect x="5" y="15" width="38" height="8" rx="2.5"/>
+        <path d="M9 23v10M12.5 23v10M16 23v10M19.5 23v10M23 23v10M26.5 23v7.5M30 23v7.5M33.5 23v7.5M37 23v7.5M40.5 23v7.5"/>
+      </g>
+      <g fill="#fff"><path d="M38 27Q38 31 42 31Q38 31 38 35Q38 31 34 31Q38 31 38 27Z"/><path d="M12 6Q12 8.5 14.5 8.5Q12 8.5 12 11Q12 8.5 9.5 8.5Q12 8.5 12 6Z"/></g>
+    </symbol>
+  </svg>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ============ Cabeçalho ============ -->
+  <header class="header" id="topo">
+    <div class="container header__inner">
+      <a class="brand" href="#inicio" aria-label="Giovanna Pinheiro · Tosadora — início">
+        <svg class="brand__paw" aria-hidden="true"><use href="#paw"/></svg>
+        <span class="brand__text">
+          <span class="brand__name">Giovanna Pinheiro</span>
+          <span class="brand__role">Tosadora</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="menu" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#inicio">Início</a></li>
+          <li><a class="nav__link" href="#servicos">Serviços</a></li>
+          <li><a class="nav__link" href="#sobre">Sobre</a></li>
+          <li><a class="nav__link" href="#como-funciona">Como funciona</a></li>
+          <li><a class="nav__link" href="#contato">Contato</a></li>
+        </ul>
+        <div class="nav__extra">
+          <a class="btn btn--wa btn--block" href="https://wa.me/5511982535656?text=Ol%C3%A1%2C%20Giovanna!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20o%20meu%20pet%20%F0%9F%90%BE" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true"><use href="#i-wa"/></svg> Agendar pelo WhatsApp
+          </a>
+          <div class="nav__social">
+            <a href="tel:+551122210221"><svg aria-hidden="true"><use href="#i-phone"/></svg>(11) 2221-0221</a>
+            <a href="https://www.instagram.com/gi_pinheiiro/" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-ig"/></svg>@gi_pinheiiro</a>
+          </div>
+          <p class="nav__tagline">Serviço de confiança com carinho <svg aria-hidden="true"><use href="#heart"/></svg></p>
+        </div>
+      </nav>
+
+      <a class="btn btn--wa btn--sm header__cta" href="https://wa.me/5511982535656?text=Ol%C3%A1%2C%20Giovanna!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20o%20meu%20pet%20%F0%9F%90%BE" target="_blank" rel="noopener noreferrer">
+        <svg aria-hidden="true"><use href="#i-wa"/></svg> Agendar
+      </a>
+
+      <button class="menu-toggle" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+        <svg class="menu-toggle__open" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="menu-toggle__close" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ============ Hero ============ -->
+    <section class="hero" id="inicio">
+      <div class="hero__deco" aria-hidden="true">
+        <svg class="swoosh swoosh--tl" viewBox="0 0 400 260" preserveAspectRatio="none"><path class="swoosh__fill" d="M0 0h400c-46 58-128 74-208 96S48 170 0 236z"/><path class="swoosh__line" d="M0 252c58-74 132-104 218-128S352 76 400 14"/></svg>
+        <svg class="swoosh swoosh--br" viewBox="0 0 400 260" preserveAspectRatio="none"><path class="swoosh__fill" d="M400 260H0c46-58 128-74 208-96S352 90 400 24z"/></svg>
+        <svg class="deco-paw d1"><use href="#paw"/></svg>
+        <svg class="deco-paw d2"><use href="#paw"/></svg>
+        <svg class="deco-paw d3"><use href="#paw"/></svg>
+        <svg class="deco-paw deco--wide d4"><use href="#paw"/></svg>
+        <svg class="deco-heart d5"><use href="#heart-o"/></svg>
+        <svg class="deco-heart d6"><use href="#heart-o"/></svg>
+      </div>
+
+      <div class="container hero__grid">
+        <div class="hero__art">
+          <div class="hero__glow" aria-hidden="true"></div>
+          <div class="hero__ring" aria-hidden="true">
+            <span class="hero__ring-paw"><svg><use href="#paw"/></svg></span>
+          </div>
+          <img class="hero__img" src="assets/img/giovanna-pet.webp" width="923" height="978" fetchpriority="high" decoding="async"
+               alt="Ilustração de um cachorrinho preto sorridente tomando banho de espuma numa bacia azul, com toalhas, patinho de borracha, shampoo e escova">
+          <div class="bubbles" aria-hidden="true">
+            <span class="b1"></span>
+            <span class="b2"></span>
+            <span class="b3"></span>
+            <span class="b4"></span>
+            <span class="b5"></span>
+            <span class="b6"></span>
+            <span class="b7"></span>
+            <span class="b8"></span>
+          </div>
+          <div class="chip chip--love">
+            <span class="chip__icon chip__icon--pink"><svg aria-hidden="true"><use href="#heart"/></svg></span>
+            <span>Feito com <b>carinho</b></span>
+          </div>
+          <div class="chip chip--paw">
+            <span class="chip__icon chip__icon--blue"><svg aria-hidden="true"><use href="#paw"/></svg></span>
+            <span><b>Banho</b> &amp; <b>Tosa</b></span>
+          </div>
+        </div>
+
+        <div class="hero__content">
+          <p class="hero__eyebrow">
+            <svg aria-hidden="true"><use href="#i-pin"/></svg>
+            Vila Guilherme · São Paulo
+          </p>
+          <h1 class="hero__title">Giovanna Pinheiro</h1>
+          <div class="paw-divider" aria-hidden="true"><span></span><svg><use href="#paw"/></svg><span></span></div>
+          <p class="hero__role">
+            <svg aria-hidden="true"><use href="#heart-o"/></svg>
+            Tosadora
+            <svg aria-hidden="true"><use href="#heart-o"/></svg>
+          </p>
+          <p class="hero__lead">
+            Banho, tosa e cuidados feitos com <strong>calma, paciência e muito amor</strong>.
+            Seu pet volta para casa lindo, cheiroso e feliz da vida!
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--wa btn--lg" href="https://wa.me/5511982535656?text=Ol%C3%A1%2C%20Giovanna!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20o%20meu%20pet%20%F0%9F%90%BE" target="_blank" rel="noopener noreferrer">
+              <svg aria-hidden="true"><use href="#i-wa"/></svg> Agendar pelo WhatsApp
+            </a>
+            <a class="btn btn--ghost btn--lg" href="#servicos">
+              Ver serviços <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
+          <ul class="hero__facts">
+            <li><svg aria-hidden="true"><use href="#heart"/></svg> Atendimento com carinho</li>
+            <li><svg aria-hidden="true"><use href="#i-sparkles"/></svg> 6 serviços para seu pet</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Faixa animada ============ -->
+    <div class="ribbon" aria-hidden="true">
+      <div class="ribbon__track">
+        <div class="ribbon__group">
+          <span>Banho</span><svg><use href="#paw"/></svg>
+          <span>Hidratação</span><svg><use href="#paw"/></svg>
+          <span>Corte de unha</span><svg><use href="#paw"/></svg>
+          <span>Tosa higiênica</span><svg><use href="#paw"/></svg>
+          <span>Remoção de subpelos</span><svg><use href="#paw"/></svg>
+          <span>Penteados</span><svg><use href="#paw"/></svg>
+        </div>
+        <div class="ribbon__group">
+          <span>Banho</span><svg><use href="#paw"/></svg>
+          <span>Hidratação</span><svg><use href="#paw"/></svg>
+          <span>Corte de unha</span><svg><use href="#paw"/></svg>
+          <span>Tosa higiênica</span><svg><use href="#paw"/></svg>
+          <span>Remoção de subpelos</span><svg><use href="#paw"/></svg>
+          <span>Penteados</span><svg><use href="#paw"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ Serviços ============ -->
+    <section class="services section" id="servicos">
+      <svg class="deco-paw d7" aria-hidden="true"><use href="#paw"/></svg>
+      <svg class="deco-paw d8" aria-hidden="true"><use href="#paw"/></svg>
+      <svg class="deco-heart d9" aria-hidden="true"><use href="#heart-o"/></svg>
+
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <h2 class="section-title">
+            <span class="section-title__script">Serviços</span>
+            <span class="section-title__caps">Oferecidos</span>
+          </h2>
+          <div class="heart-divider" aria-hidden="true"><span></span><svg><use href="#heart-o"/></svg><span></span></div>
+          <p class="section-lead">Tudo o que seu pet precisa para ficar limpinho, confortável e ainda mais lindo.</p>
+        </header>
+
+        <ul class="services__grid">
+          <li class="service service--blue" data-reveal>
+            <span class="icon-bubble icon-bubble--blue"><svg aria-hidden="true"><use href="#s-banho"/></svg></span>
+            <div class="service__body">
+              <h3 class="service__title">Banho</h3>
+              <p class="service__text">Banho caprichado, secagem cuidadosa e aquele cheirinho gostoso de pet limpinho.</p>
+              <a class="service__link" data-service="Banho" href="https://wa.me/5511982535656" target="_blank" rel="noopener noreferrer">Agendar <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </li>
+          <li class="service service--pink" data-reveal>
+            <span class="icon-bubble icon-bubble--pink"><svg aria-hidden="true"><use href="#s-hidratacao"/></svg></span>
+            <div class="service__body">
+              <h3 class="service__title">Hidratação</h3>
+              <p class="service__text">Nutre os pelos e deixa tudo mais macio, brilhante e fácil de pentear.</p>
+              <a class="service__link" data-service="Hidratação" href="https://wa.me/5511982535656" target="_blank" rel="noopener noreferrer">Agendar <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </li>
+          <li class="service service--blue" data-reveal>
+            <span class="icon-bubble icon-bubble--blue"><svg aria-hidden="true"><use href="#s-unha"/></svg></span>
+            <div class="service__body">
+              <h3 class="service__title">Corte de unha</h3>
+              <p class="service__text">Unhas aparadas com cuidado e segurança, para o pet andar com mais conforto.</p>
+              <a class="service__link" data-service="Corte de unha" href="https://wa.me/5511982535656" target="_blank" rel="noopener noreferrer">Agendar <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </li>
+          <li class="service service--pink" data-reveal>
+            <span class="icon-bubble icon-bubble--pink"><svg aria-hidden="true"><use href="#s-tosa"/></svg></span>
+            <div class="service__body">
+              <h3 class="service__title">Tosa higiênica</h3>
+              <p class="service__text">Aparo das partes íntimas, barriguinha e patinhas para mais higiene no dia a dia.</p>
+              <a class="service__link" data-service="Tosa higiênica" href="https://wa.me/5511982535656" target="_blank" rel="noopener noreferrer">Agendar <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </li>
+          <li class="service service--blue" data-reveal>
+            <span class="icon-bubble icon-bubble--blue"><svg aria-hidden="true"><use href="#s-subpelo"/></svg></span>
+            <div class="service__body">
+              <h3 class="service__title">Remoção de subpelos</h3>
+              <p class="service__text">Retira a pelagem morta que causa calor, nózinhos e muito pelo espalhado pela casa.</p>
+              <a class="service__link" data-service="Remoção de subpelos" href="https://wa.me/5511982535656" target="_blank" rel="noopener noreferrer">Agendar <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </li>
+          <li class="service service--pink" data-reveal>
+            <span class="icon-bubble icon-bubble--pink"><svg aria-hidden="true"><use href="#s-pente"/></svg></span>
+            <div class="service__body">
+              <h3 class="service__title">Penteados</h3>
+              <p class="service__text">Escovação e finalização caprichada para deixar seu pet prontinho para as fotos.</p>
+              <a class="service__link" data-service="Penteados" href="https://wa.me/5511982535656" target="_blank" rel="noopener noreferrer">Agendar <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ Sobre ============ -->
+    <section class="about section" id="sobre">
+      <svg class="wave wave--top" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0h1440v34c-160 34-340 46-540 22S520 6 340 18 90 66 0 46z"/></svg>
+      <svg class="deco-paw d10" aria-hidden="true"><use href="#paw"/></svg>
+      <svg class="deco-paw d11" aria-hidden="true"><use href="#paw"/></svg>
+
+      <div class="container about__grid">
+        <div class="about__text" data-reveal>
+          <p class="eyebrow">Sobre mim</p>
+          <h2 class="about__title">
+            <span>Serviço de</span>
+            <span>confiança</span>
+            <span>com carinho</span>
+          </h2>
+          <div class="gold-heart-line" aria-hidden="true"><span></span><svg><use href="#heart-o"/></svg><span></span></div>
+          <p>Oi! Eu sou a <strong>Giovanna Pinheiro</strong>, tosadora e apaixonada por bichinhos. Aqui, cada pet é recebido como se fosse da família: com calma, paciência e muito carinho do começo ao fim.</p>
+          <p>Meu objetivo é simples: que o seu melhor amigo se sinta seguro e confortável — e volte para casa lindo, cheiroso e feliz.</p>
+          <a class="btn btn--ig" href="https://www.instagram.com/gi_pinheiiro/" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true"><use href="#i-ig"/></svg> Siga @gi_pinheiiro
+          </a>
+        </div>
+
+        <ul class="features">
+          <li class="feature" data-reveal>
+            <span class="feature__icon feature__icon--pink"><svg aria-hidden="true"><use href="#heart"/></svg></span>
+            <div>
+              <h3>Paciência e carinho</h3>
+              <p>Atendimento tranquilo, respeitando o tempo e o jeitinho de cada pet.</p>
+            </div>
+          </li>
+          <li class="feature" data-reveal>
+            <span class="feature__icon feature__icon--blue"><svg aria-hidden="true"><use href="#i-sparkles"/></svg></span>
+            <div>
+              <h3>Atenção aos detalhes</h3>
+              <p>Do banho à finalização, cada etapa é feita com capricho e cuidado.</p>
+            </div>
+          </li>
+          <li class="feature" data-reveal>
+            <span class="feature__icon feature__icon--gold"><svg aria-hidden="true"><use href="#i-calendar"/></svg></span>
+            <div>
+              <h3>Agendamento fácil</h3>
+              <p>É só chamar no WhatsApp para combinar o melhor dia e horário.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <svg class="wave wave--bottom" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 80h1440V40c-110-26-260-40-450-14S640 70 450 56 120 14 0 34z"/></svg>
+    </section>
+
+    <!-- ============ Como funciona ============ -->
+    <section class="steps section" id="como-funciona">
+      <svg class="deco-heart d12" aria-hidden="true"><use href="#heart-o"/></svg>
+      <svg class="deco-paw d13" aria-hidden="true"><use href="#paw"/></svg>
+
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <h2 class="section-title">
+            <span class="section-title__script">Como funciona</span>
+            <span class="section-title__caps">Em 3 passinhos</span>
+          </h2>
+          <div class="heart-divider" aria-hidden="true"><span></span><svg><use href="#heart-o"/></svg><span></span></div>
+        </header>
+
+        <ol class="steps__list">
+          <li class="step" data-reveal>
+            <span class="step__num" aria-hidden="true">1</span>
+            <span class="step__icon step__icon--blue"><svg aria-hidden="true"><use href="#i-chat"/></svg></span>
+            <h3>Chame no WhatsApp</h3>
+            <p>Conte o nome, a raça e o porte do seu pet e qual serviço você deseja.</p>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step__num" aria-hidden="true">2</span>
+            <span class="step__icon step__icon--pink"><svg aria-hidden="true"><use href="#i-calendar"/></svg></span>
+            <h3>Combine o horário</h3>
+            <p>Escolhemos juntos o dia e o horário que ficam melhores para você.</p>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step__num" aria-hidden="true">3</span>
+            <span class="step__icon step__icon--blue"><svg aria-hidden="true"><use href="#paw"/></svg></span>
+            <h3>Pet lindo e feliz</h3>
+            <p>Seu pet recebe todo o carinho e volta para casa cheiroso e feliz da vida!</p>
+          </li>
+        </ol>
+
+        <div class="steps__cta" data-reveal>
+          <a class="btn btn--wa btn--lg" href="https://wa.me/5511982535656?text=Ol%C3%A1%2C%20Giovanna!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20o%20meu%20pet%20%F0%9F%90%BE" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true"><use href="#i-wa"/></svg> Quero agendar agora
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Contato ============ -->
+    <section class="contact section" id="contato">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <h2 class="section-title">
+            <span class="section-title__script">Vamos agendar?</span>
+            <span class="section-title__caps">Fale comigo</span>
+          </h2>
+          <div class="heart-divider" aria-hidden="true"><span></span><svg><use href="#heart-o"/></svg><span></span></div>
+        </header>
+
+        <div class="contact__grid">
+          <ul class="contact__list">
+            <li data-reveal>
+              <a class="pill pill--phone" href="tel:+551122210221">
+                <span class="pill__icon"><svg aria-hidden="true"><use href="#i-phone"/></svg></span>
+                <span class="pill__text"><small>Telefone</small><strong>(11) 2221-0221</strong></span>
+                <svg class="pill__go" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </a>
+            </li>
+            <li data-reveal>
+              <a class="pill pill--wa" href="https://wa.me/5511982535656?text=Ol%C3%A1%2C%20Giovanna!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20o%20meu%20pet%20%F0%9F%90%BE" target="_blank" rel="noopener noreferrer">
+                <span class="pill__icon"><svg aria-hidden="true"><use href="#i-wa"/></svg></span>
+                <span class="pill__text"><small>WhatsApp</small><strong>(11) 98253-5656</strong></span>
+                <svg class="pill__go" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </a>
+            </li>
+            <li data-reveal>
+              <a class="pill pill--ig" href="https://www.instagram.com/gi_pinheiiro/" target="_blank" rel="noopener noreferrer">
+                <span class="pill__icon"><svg aria-hidden="true"><use href="#i-ig"/></svg></span>
+                <span class="pill__text"><small>Instagram</small><strong>@gi_pinheiiro</strong></span>
+                <svg class="pill__go" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </a>
+            </li>
+            <li data-reveal>
+              <a class="pill pill--pin" href="https://www.google.com/maps/search/?api=1&amp;query=R.%20Maria%20Prestes%20Maia%2C%20527%20-%20Vila%20Guilherme%2C%20S%C3%A3o%20Paulo%20-%20SP" target="_blank" rel="noopener noreferrer">
+                <span class="pill__icon"><svg aria-hidden="true"><use href="#i-pin"/></svg></span>
+                <span class="pill__text"><small>Endereço</small><strong>R. Maria Prestes Maia, 527</strong><span>Vila Guilherme, São Paulo</span></span>
+                <svg class="pill__go" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </a>
+            </li>
+          </ul>
+
+          <div class="map" data-reveal>
+            <iframe title="Mapa: R. Maria Prestes Maia, 527 - Vila Guilherme, São Paulo"
+                    src="https://www.google.com/maps?q=R.%20Maria%20Prestes%20Maia%2C%20527%20-%20Vila%20Guilherme%2C%20S%C3%A3o%20Paulo%20-%20SP&amp;z=16&amp;output=embed"
+                    loading="lazy" referrerpolicy="no-referrer"
+                    sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+            <a class="map__btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=R.%20Maria%20Prestes%20Maia%2C%20527%20-%20Vila%20Guilherme%2C%20S%C3%A3o%20Paulo%20-%20SP" target="_blank" rel="noopener noreferrer">
+              <svg aria-hidden="true"><use href="#i-pin"/></svg> Como chegar
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Rodapé ============ -->
+  <footer class="footer">
+    <svg class="wave wave--footer" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0h1440v30c-150 30-330 44-520 20S560 0 380 10 110 50 0 36z"/></svg>
+    <svg class="deco-paw d14" aria-hidden="true"><use href="#paw"/></svg>
+    <svg class="deco-paw d15" aria-hidden="true"><use href="#paw"/></svg>
+
+    <div class="container footer__inner">
+      <svg class="footer__paw" aria-hidden="true"><use href="#paw"/></svg>
+      <p class="footer__name">Giovanna Pinheiro</p>
+      <p class="footer__role"><svg aria-hidden="true"><use href="#heart-o"/></svg> Tosadora <svg aria-hidden="true"><use href="#heart-o"/></svg></p>
+      <p class="footer__tagline">Serviço de confiança com carinho</p>
+
+      <ul class="footer__social">
+        <li><a class="social social--phone" href="tel:+551122210221" aria-label="Ligar para (11) 2221-0221"><svg aria-hidden="true"><use href="#i-phone"/></svg></a></li>
+        <li><a class="social social--wa" href="https://wa.me/5511982535656?text=Ol%C3%A1%2C%20Giovanna!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20o%20meu%20pet%20%F0%9F%90%BE" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp (11) 98253-5656"><svg aria-hidden="true"><use href="#i-wa"/></svg></a></li>
+        <li><a class="social social--ig" href="https://www.instagram.com/gi_pinheiiro/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @gi_pinheiiro"><svg aria-hidden="true"><use href="#i-ig"/></svg></a></li>
+        <li><a class="social social--pin" href="https://www.google.com/maps/search/?api=1&amp;query=R.%20Maria%20Prestes%20Maia%2C%20527%20-%20Vila%20Guilherme%2C%20S%C3%A3o%20Paulo%20-%20SP" target="_blank" rel="noopener noreferrer" aria-label="Ver endereço no mapa"><svg aria-hidden="true"><use href="#i-pin"/></svg></a></li>
+      </ul>
+
+      <address class="footer__address"><span>R. Maria Prestes Maia, 527</span> <span>Vila Guilherme, São Paulo – SP</span></address>
+      <p class="footer__copy">© <span data-year>2026</span> Giovanna Pinheiro · Feito com <svg aria-hidden="true"><use href="#heart"/></svg> para o seu pet</p>
+    </div>
+  </footer>
+
+  <!-- Barra de ações (celular) -->
+  <nav class="action-bar" aria-label="Contato rápido">
+    <a class="action-bar__round action-bar__round--phone" href="tel:+551122210221" aria-label="Ligar"><svg aria-hidden="true"><use href="#i-phone"/></svg></a>
+    <a class="action-bar__round action-bar__round--ig" href="https://www.instagram.com/gi_pinheiiro/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
+    <a class="action-bar__main" href="https://wa.me/5511982535656?text=Ol%C3%A1%2C%20Giovanna!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20o%20meu%20pet%20%F0%9F%90%BE" target="_blank" rel="noopener noreferrer">
+      <svg aria-hidden="true"><use href="#i-wa"/></svg>
+      <span>Agendar <span class="action-bar__extra">pelo WhatsApp</span></span>
+    </a>
+  </nav>
+
+  <!-- Botão flutuante (computador) -->
+  <a class="wa-float" href="https://wa.me/5511982535656?text=Ol%C3%A1%2C%20Giovanna!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20o%20meu%20pet%20%F0%9F%90%BE" target="_blank" rel="noopener noreferrer" aria-label="Agendar pelo WhatsApp">
+    <svg aria-hidden="true"><use href="#i-wa"/></svg>
+    <span class="wa-float__tip">Agende pelo WhatsApp</span>
+  </a>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
