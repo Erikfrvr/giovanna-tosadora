@@ -3,10 +3,22 @@
    sem sinal, abre a cópia guardada.
    Imagens e fontes: mostra a cópia guardada na hora e atualiza por trás.
    Só precisa mexer aqui se mudar a lista ESSENCIAIS: aí aumente o número do CACHE
-   (giovanna-v1 para giovanna-v2) para todo mundo baixar de novo. */
+   (giovanna-v1 para giovanna-v2) para todo mundo baixar de novo.
+
+   Em caso de invasão: depois de recuperar a conta do GitHub, troque TODO este arquivo por
+     self.addEventListener('install', function () { self.skipWaiting(); });
+     self.addEventListener('activate', function (e) {
+       e.waitUntil(caches.keys().then(function (n) {
+         return Promise.all(n.filter(function (k) { return k.indexOf('giovanna-') === 0; }).map(function (k) { return caches.delete(k); }));
+       }).then(function () { return self.registration.unregister(); }));
+     });
+   Em até 24 h todo celular que abrir o site apaga as cópias guardadas. */
 'use strict';
 
-var CACHE = 'giovanna-v1';
+// O endereço erikfrvr.github.io é dividido com outros sites (Genival etc.), e o espaço de cópias
+// também: este service worker só mexe nas cópias que começam com este prefixo.
+var PREFIXO = 'giovanna-';
+var CACHE = PREFIXO + 'v1';
 
 // Baixados já na instalação, para o app abrir completo mesmo sem internet
 var ESSENCIAIS = [
@@ -39,7 +51,7 @@ self.addEventListener('activate', function (e) {
     caches.keys()
       .then(function (nomes) {
         return Promise.all(nomes
-          .filter(function (nome) { return nome !== CACHE; })
+          .filter(function (nome) { return nome.indexOf(PREFIXO) === 0 && nome !== CACHE; })
           .map(function (nome) { return caches.delete(nome); }));
       })
       .then(function () { return self.clients.claim(); })
@@ -64,7 +76,8 @@ self.addEventListener('fetch', function (e) {
 
 function buscarEGuardar(cache, req, chave) {
   return fetch(req).then(function (res) {
-    if (res.ok) cache.put(chave, res.clone());
+    // só guarda resposta completa e do próprio site (nada de redirecionamento ou resposta opaca)
+    if (res.ok && res.type === 'basic' && !res.redirected) cache.put(chave, res.clone());
     return res;
   });
 }

@@ -1,6 +1,8 @@
 # Cabeçalhos de segurança HTTP.
 # O GitHub Pages IGNORA este arquivo (ele não permite cabeçalhos próprios).
 # Ele passa a valer automaticamente se o site for hospedado no Cloudflare Pages ou na Netlify.
+# Diferença para a CSP do index.html: aqui connect-src é 'self' porque este cabeçalho também vale
+# para o sw.js, e o service worker precisa buscar os arquivos do site para guardar a cópia offline.
 /*
   Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; manifest-src 'self'; worker-src 'self'; frame-src https://www.google.com; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types app
   X-Frame-Options: DENY
