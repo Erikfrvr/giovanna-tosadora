@@ -4,6 +4,11 @@
   var root = document.documentElement;
   root.classList.add('js');
 
+  /* Aberto pelo ícone da tela inicial (app instalado): esconde o convite para instalar */
+  if (navigator.standalone === true || window.matchMedia('(display-mode: standalone)').matches) {
+    root.classList.add('is-app');
+  }
+
   /* Anti-clickjacking: o GitHub Pages não permite enviar X-Frame-Options nem
      "frame-ancestors", então se o site for aberto dentro de um <iframe> de
      outro domínio, a página fica oculta e tentamos abrir o site de verdade. */

@@ -8,12 +8,13 @@
        CSP: o navegador só executa scripts, estilos, fontes e imagens do próprio site.
        Qualquer código injetado (inline, de outro domínio, eval) é bloqueado.
        Única exceção: o mapa do Google, isolado num iframe com sandbox.
+       O service worker do app (sw.js) só é registrado pela política "app" do assets/js/app.js.
        Ao editar o site, NÃO use <script> ou style="" no HTML: coloque em assets/js e assets/css. -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; manifest-src 'self'; frame-src https://www.google.com; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; manifest-src 'self'; worker-src 'self'; frame-src https://www.google.com; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types app">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="format-detection" content="telephone=no">
 
-  <title>Giovanna Pinheiro · Tosadora | Banho e Tosa em Vila Guilherme – SP</title>
+  <title>Giovanna Pinheiro · Tosadora | Banho e Tosa em Vila Guilherme, SP</title>
   <meta name="description" content="Banho, hidratação, corte de unha, tosa higiênica, remoção de subpelos e penteados feitos com muito carinho. Giovanna Pinheiro, tosadora em Vila Guilherme, São Paulo. Agende pelo WhatsApp (11) 98253-5656.">
   <meta name="theme-color" content="#FDE2E4">
   <meta name="color-scheme" content="light">
@@ -21,6 +22,13 @@
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
+
+  <!-- App: deixa o site ser instalado na tela inicial do celular (ver assets/js/app.js e sw.js) -->
+  <meta name="application-name" content="Giovanna Pet">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Giovanna Pet">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
   <link rel="canonical" href="https://erikfrvr.github.io/giovanna-tosadora/">
 
@@ -53,7 +61,7 @@
     "telephone": "+55-11-98253-5656",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "R. Maria Prestes Maia, 527 - Vila Guilherme",
+      "streetAddress": "R. Maria Prestes Maia, 527, Vila Guilherme",
       "addressLocality": "São Paulo",
       "addressRegion": "SP",
       "addressCountry": "BR"
@@ -120,6 +128,30 @@
       <path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/>
     </symbol>
 
+    <!-- App -->
+    <symbol id="i-download" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m-5-4.5 5 5 5-5M5 20h14"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/>
+    </symbol>
+    <symbol id="i-offline" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M2.5 8.8a14 14 0 0 1 4.3-2.6M10.6 5.1a14 14 0 0 1 10.9 3.7M5.5 12.2a9.5 9.5 0 0 1 3.4-1.9M15.6 10.6a9.6 9.6 0 0 1 2.9 1.6M8.7 15.5a5 5 0 0 1 6.6 0M3 3l18 18"/></g>
+      <circle cx="12" cy="19.4" r="1.5"/>
+    </symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24">
+      <path d="M13.5 2 4.5 13.5h6l-1 8.5 9-11.5h-6l1-8.5Z"/>
+    </symbol>
+    <symbol id="i-share-ios" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11.5M8.2 6.8 12 3l3.8 3.8"/><path d="M8.5 10H7a2.5 2.5 0 0 0-2.5 2.5v6A2.5 2.5 0 0 0 7 21h10a2.5 2.5 0 0 0 2.5-2.5v-6A2.5 2.5 0 0 0 17 10h-1.5"/></g>
+    </symbol>
+    <symbol id="i-addhome" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><path d="M12 8v8M8 12h8"/></g>
+    </symbol>
+    <symbol id="i-dots" viewBox="0 0 24 24">
+      <circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/>
+    </symbol>
+
     <!-- Serviços -->
     <symbol id="s-banho" viewBox="0 0 48 48">
       <g fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
@@ -178,7 +210,7 @@
   <!-- ============ Cabeçalho ============ -->
   <header class="header" id="topo">
     <div class="container header__inner">
-      <a class="brand" href="#inicio" aria-label="Giovanna Pinheiro · Tosadora — início">
+      <a class="brand" href="#inicio" aria-label="Giovanna Pinheiro · Tosadora, início">
         <svg class="brand__paw" aria-hidden="true"><use href="#paw"/></svg>
         <span class="brand__text">
           <span class="brand__name">Giovanna Pinheiro</span>
@@ -193,6 +225,7 @@
           <li><a class="nav__link" href="#sobre">Sobre</a></li>
           <li><a class="nav__link" href="#como-funciona">Como funciona</a></li>
           <li><a class="nav__link" href="#contato">Contato</a></li>
+          <li class="nav__app"><a class="nav__link" href="#app">App</a></li>
         </ul>
         <div class="nav__extra">
           <a class="btn btn--wa btn--block" href="https://wa.me/5511982535656?text=Ol%C3%A1%2C%20Giovanna!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20o%20meu%20pet%20%F0%9F%90%BE" target="_blank" rel="noopener noreferrer">
@@ -399,7 +432,7 @@
           </h2>
           <div class="gold-heart-line" aria-hidden="true"><span></span><svg><use href="#heart-o"/></svg><span></span></div>
           <p>Oi! Eu sou a <strong>Giovanna Pinheiro</strong>, tosadora e apaixonada por bichinhos. Aqui, cada pet é recebido como se fosse da família: com calma, paciência e muito carinho do começo ao fim.</p>
-          <p>Meu objetivo é simples: que o seu melhor amigo se sinta seguro e confortável — e volte para casa lindo, cheiroso e feliz.</p>
+          <p>Meu objetivo é simples: que o seu melhor amigo se sinta seguro e confortável, e volte para casa lindo, cheiroso e feliz.</p>
           <a class="btn btn--ig" href="https://www.instagram.com/gi_pinheiiro/" target="_blank" rel="noopener noreferrer">
             <svg aria-hidden="true"><use href="#i-ig"/></svg> Siga @gi_pinheiiro
           </a>
@@ -511,7 +544,7 @@
               </a>
             </li>
             <li data-reveal>
-              <a class="pill pill--pin" href="https://www.google.com/maps/search/?api=1&amp;query=R.%20Maria%20Prestes%20Maia%2C%20527%20-%20Vila%20Guilherme%2C%20S%C3%A3o%20Paulo%20-%20SP" target="_blank" rel="noopener noreferrer">
+              <a class="pill pill--pin" href="https://www.google.com/maps/search/?api=1&amp;query=R.%20Maria%20Prestes%20Maia%2C%20527%2C%20Vila%20Guilherme%2C%20S%C3%A3o%20Paulo%2C%20SP" target="_blank" rel="noopener noreferrer">
                 <span class="pill__icon"><svg aria-hidden="true"><use href="#i-pin"/></svg></span>
                 <span class="pill__text"><small>Endereço</small><strong>R. Maria Prestes Maia, 527</strong><span>Vila Guilherme, São Paulo</span></span>
                 <svg class="pill__go" aria-hidden="true"><use href="#i-arrow"/></svg>
@@ -520,13 +553,62 @@
           </ul>
 
           <div class="map" data-reveal>
-            <iframe title="Mapa: R. Maria Prestes Maia, 527 - Vila Guilherme, São Paulo"
-                    src="https://www.google.com/maps?q=R.%20Maria%20Prestes%20Maia%2C%20527%20-%20Vila%20Guilherme%2C%20S%C3%A3o%20Paulo%20-%20SP&amp;z=16&amp;output=embed"
+            <iframe title="Mapa: R. Maria Prestes Maia, 527, Vila Guilherme, São Paulo"
+                    src="https://www.google.com/maps?q=R.%20Maria%20Prestes%20Maia%2C%20527%2C%20Vila%20Guilherme%2C%20S%C3%A3o%20Paulo%2C%20SP&amp;z=16&amp;output=embed"
                     loading="lazy" referrerpolicy="no-referrer"
                     sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
-            <a class="map__btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=R.%20Maria%20Prestes%20Maia%2C%20527%20-%20Vila%20Guilherme%2C%20S%C3%A3o%20Paulo%20-%20SP" target="_blank" rel="noopener noreferrer">
+            <a class="map__btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=R.%20Maria%20Prestes%20Maia%2C%20527%2C%20Vila%20Guilherme%2C%20S%C3%A3o%20Paulo%2C%20SP" target="_blank" rel="noopener noreferrer">
               <svg aria-hidden="true"><use href="#i-pin"/></svg> Como chegar
             </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ App (o app.js mostra; some sozinha quando o site já está aberto como app) ============ -->
+    <section class="app section" id="app" hidden>
+      <div class="container">
+        <div class="app__card">
+          <div class="app__head" data-reveal>
+            <p class="eyebrow">App da Giovanna</p>
+            <h2 class="app__title">Leve a Giovanna no seu <span>celular</span></h2>
+            <p class="app__lead">Instale o app de graça, direto daqui: sem loja e sem cadastro. Ele fica na tela inicial, pertinho dos seus outros apps.</p>
+          </div>
+
+          <div class="phone" data-reveal aria-hidden="true">
+            <div class="phone__body">
+              <div class="phone__screen">
+                <span class="phone__island"></span>
+                <span class="phone__status"><b>9:41</b><i></i><i></i></span>
+                <span class="phone__apps">
+                  <span></span><span></span><span></span><span></span>
+                  <span></span>
+                  <span class="phone__me"><img src="assets/img/apple-touch-icon.png" alt="" width="180" height="180" loading="lazy"><small>Giovanna Pet</small></span>
+                  <span></span><span></span>
+                  <span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span>
+                </span>
+                <span class="phone__dots"><i></i><i></i><i></i></span>
+                <span class="phone__dock"><span></span><span></span><span></span><span></span></span>
+              </div>
+            </div>
+            <div class="chip chip--app">
+              <span class="chip__icon chip__icon--gold"><svg><use href="#i-bolt"/></svg></span>
+              <span><b>Grátis</b><small>sem loja de apps</small></span>
+            </div>
+          </div>
+
+          <ul class="app__perks">
+            <li data-reveal><span class="app__ico app__ico--pink"><svg aria-hidden="true"><use href="#i-calendar"/></svg></span><span><strong>Agende em 1 toque</strong><small>O WhatsApp da Giovanna sempre à mão</small></span></li>
+            <li data-reveal><span class="app__ico app__ico--blue"><svg aria-hidden="true"><use href="#i-offline"/></svg></span><span><strong>Abre até sem internet</strong><small>Serviços e contatos sempre com você</small></span></li>
+            <li data-reveal><span class="app__ico app__ico--gold"><svg aria-hidden="true"><use href="#i-sparkles"/></svg></span><span><strong>Leve e sem anúncios</strong><small>Ocupa quase nada no celular</small></span></li>
+          </ul>
+
+          <div class="app__cta" data-reveal>
+            <button type="button" class="btn btn--rose btn--lg" data-instalar><svg aria-hidden="true"><use href="#i-download"/></svg> Instalar o app</button>
+            <p class="app__dica" id="app-dica">Funciona no Android, no iPhone e no computador</p>
+            <p class="app__ok" id="app-ok" hidden><span><svg aria-hidden="true"><use href="#i-check"/></svg></span>Prontinho! O app já está na sua tela inicial.</p>
           </div>
         </div>
       </div>
@@ -549,10 +631,10 @@
         <li><a class="social social--phone" href="tel:+551122210221" aria-label="Ligar para (11) 2221-0221"><svg aria-hidden="true"><use href="#i-phone"/></svg></a></li>
         <li><a class="social social--wa" href="https://wa.me/5511982535656?text=Ol%C3%A1%2C%20Giovanna!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20o%20meu%20pet%20%F0%9F%90%BE" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp (11) 98253-5656"><svg aria-hidden="true"><use href="#i-wa"/></svg></a></li>
         <li><a class="social social--ig" href="https://www.instagram.com/gi_pinheiiro/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @gi_pinheiiro"><svg aria-hidden="true"><use href="#i-ig"/></svg></a></li>
-        <li><a class="social social--pin" href="https://www.google.com/maps/search/?api=1&amp;query=R.%20Maria%20Prestes%20Maia%2C%20527%20-%20Vila%20Guilherme%2C%20S%C3%A3o%20Paulo%20-%20SP" target="_blank" rel="noopener noreferrer" aria-label="Ver endereço no mapa"><svg aria-hidden="true"><use href="#i-pin"/></svg></a></li>
+        <li><a class="social social--pin" href="https://www.google.com/maps/search/?api=1&amp;query=R.%20Maria%20Prestes%20Maia%2C%20527%2C%20Vila%20Guilherme%2C%20S%C3%A3o%20Paulo%2C%20SP" target="_blank" rel="noopener noreferrer" aria-label="Ver endereço no mapa"><svg aria-hidden="true"><use href="#i-pin"/></svg></a></li>
       </ul>
 
-      <address class="footer__address"><span>R. Maria Prestes Maia, 527</span> <span>Vila Guilherme, São Paulo – SP</span></address>
+      <address class="footer__address"><span>R. Maria Prestes Maia, 527</span> <span>Vila Guilherme, São Paulo, SP</span></address>
       <p class="footer__copy">© <span data-year>2026</span> Giovanna Pinheiro · Feito com <svg aria-hidden="true"><use href="#heart"/></svg> para o seu pet</p>
     </div>
   </footer>
@@ -573,6 +655,64 @@
     <span class="wa-float__tip">Agende pelo WhatsApp</span>
   </a>
 
+  <!-- Convite para instalar o app (aparece só em boas horas, ex.: quando a pessoa volta do WhatsApp) -->
+  <div class="toast" id="toast-app" role="status" hidden>
+    <img class="toast__icon" src="assets/img/apple-touch-icon.png" alt="" width="46" height="46" loading="lazy">
+    <p class="toast__txt"><strong id="toast-titulo">Volte sempre! 🐾</strong><small>Instale o app e agende em 1 toque.</small></p>
+    <button type="button" class="btn btn--rose btn--sm" data-instalar>Instalar</button>
+    <button type="button" class="toast__x" data-fechar-toast aria-label="Fechar"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+  </div>
+
+  <!-- Passo a passo para instalar (quando o navegador não tem o botão automático, como no iPhone) -->
+  <dialog class="sheet" id="instalar" aria-labelledby="instalar-titulo">
+    <div class="sheet__in">
+      <span class="sheet__grip" aria-hidden="true"></span>
+      <button type="button" class="sheet__x" data-fechar aria-label="Fechar"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+      <img class="sheet__icon" src="assets/img/apple-touch-icon.png" alt="" width="72" height="72" loading="lazy">
+      <h3 id="instalar-titulo">Instale em 3 toques</h3>
+      <p class="sheet__sub">A Giovanna fica na sua tela inicial, igual a qualquer outro app.</p>
+      <p class="sheet__aviso" data-social hidden><svg aria-hidden="true"><use href="#i-sparkles"/></svg><span>Abriu pelo Instagram ou Facebook? Antes, toque nos <b>três pontinhos</b> e escolha <b>Abrir no navegador</b>.</span></p>
+
+      <!-- Chrome, Edge e Samsung: o navegador libera o botão de instalar depois de uns segundos na página -->
+      <div class="auto" data-auto hidden>
+        <div class="auto__espera" data-espera>
+          <span class="auto__giro" aria-hidden="true"></span>
+          <p><strong data-espera-titulo>Preparando a instalação…</strong><small data-espera-texto>O navegador libera o botão em alguns segundos. Deixe esta tela aberta.</small></p>
+          <span class="auto__barra" aria-hidden="true"><i data-espera-barra></i></span>
+        </div>
+        <button type="button" class="btn btn--rose btn--lg btn--block" data-instalar-agora hidden><svg aria-hidden="true"><use href="#i-download"/></svg> Instalar agora</button>
+        <p class="auto__ou"><span>ou pelo menu do navegador</span></p>
+      </div>
+
+      <ol class="passos" data-passos="ios">
+        <li><span class="passos__n">1</span><span>Toque em <b>Compartilhar</b> <span class="tecla"><svg><use href="#i-share-ios"/></svg></span> na barra do Safari<small>No iPhone mais novo, ele fica no menu de três pontinhos</small></span></li>
+        <li><span class="passos__n">2</span><span>Role a lista e toque em <b>Adicionar à Tela de Início</b> <span class="tecla"><svg><use href="#i-addhome"/></svg></span></span></li>
+        <li><span class="passos__n">3</span><span>Toque em <b>Adicionar</b>. Pronto, é só abrir pelo ícone! 🐾</span></li>
+      </ol>
+      <ol class="passos" data-passos="ios-chrome" hidden>
+        <li><span class="passos__n">1</span><span>Toque em <b>Compartilhar</b> <span class="tecla"><svg><use href="#i-share-ios"/></svg></span> na barra de endereço, lá em cima</span></li>
+        <li><span class="passos__n">2</span><span>Toque em <b>Adicionar à Tela de Início</b> <span class="tecla"><svg><use href="#i-addhome"/></svg></span><small>Se não aparecer, toque em "Mais" no fim da lista</small></span></li>
+        <li><span class="passos__n">3</span><span>Toque em <b>Adicionar</b>. Pronto, é só abrir pelo ícone! 🐾</span></li>
+      </ol>
+      <ol class="passos" data-passos="android" hidden>
+        <li><span class="passos__n">1</span><span>Toque no menu <span class="tecla"><svg><use href="#i-dots"/></svg></span> do navegador, no canto de cima</span></li>
+        <li><span class="passos__n">2</span><span>Toque em <b>Instalar app</b> ou <b>Adicionar à tela inicial</b></span></li>
+        <li><span class="passos__n">3</span><span>Confirme em <b>Instalar</b>. Pronto, é só abrir pelo ícone! 🐾</span></li>
+      </ol>
+      <ol class="passos" data-passos="pc" hidden>
+        <li><span class="passos__n">1</span><span>No <b>Chrome</b> ou no <b>Edge</b>, clique em <b>Instalar</b> <span class="tecla"><svg><use href="#i-download"/></svg></span> no fim da barra de endereço</span></li>
+        <li><span class="passos__n">2</span><span>No <b>Safari</b> do Mac, use o menu <b>Arquivo</b> e depois <b>Adicionar ao Dock</b></span></li>
+        <li><span class="passos__n">3</span><span>Confirme. A Giovanna abre numa janela só dela! 🐾</span></li>
+      </ol>
+
+      <p class="sheet__dica" data-dica="ios" hidden><b>Não achou a opção?</b> Se o link abriu de dentro de outro app (WhatsApp, Gmail…), toque em <b>Abrir no Safari</b> e tente de novo.</p>
+      <p class="sheet__dica" data-dica="android" hidden><b>Não aparece "Instalar app"?</b> Se o link abriu de dentro de outro app (WhatsApp, Gmail…), toque em <b>Abrir no Chrome</b> pelo menu e tente de novo.</p>
+
+      <button type="button" class="btn btn--ghost btn--lg btn--block" data-fechar>Entendi</button>
+    </div>
+  </dialog>
+
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
 </body>
 </html>
